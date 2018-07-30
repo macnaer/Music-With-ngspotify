@@ -1,3 +1,9 @@
+<h2>Need music?</h2>
 <p>
-  search works!
+  Use Music APP
 </p>
+<form>
+  <div class="form-group has-success">
+    <input type="text" placeholder="Search Music" class="form-control is-valid"  [(ngModel)]="SearchStr" name="SearchStr" (keyup)="SearchMusic()">
+  </div>
+</form>
