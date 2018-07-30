@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {MusicService} from '../services/music,service';
 
 @Component({
   selector: 'app-search',
@@ -8,11 +9,19 @@ import {Component} from '@angular/core';
 export class SearchComponent {
   SearchStr: string;
 
-  SearchMusic() {
-    console.log(this.SearchStr);
+
+  constructor(private _MusicService: MusicService) {
   }
 
-  constructor() {
+
+
+  SearchMusic() {
+    this._MusicService.searchMusic(this.SearchStr).subscribe(res =>{
+      console.log(res.artists.items);
+    });
   }
 
 }
+
+
+
